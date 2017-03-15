@@ -1,0 +1,10 @@
+Weeks\Wedding\Entity\Image:
+    type: entity
+    table: image_image
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string

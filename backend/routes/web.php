@@ -11,9 +11,16 @@
 |
 */
 
+use Doctrine\ORM\EntityManager;
 use Weeks\Wedding\Broadcast\BroadcasterInterface;
 
 $app->get('/', function () use ($app) {
+    /** @var EntityManager $em */
+    $em = $app['em'];
+    dd($em->getRepository(\Weeks\Wedding\Entity\Image::class));
+});
+
+$app->get('/b', function () use ($app) {
     /** @var BroadcasterInterface $broadcaster */
     $broadcaster = $app->make(BroadcasterInterface::class);
     $broadcaster->broadcast(
